@@ -1,0 +1,17 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+option go_package = "protos/toolkits";
+package pbuf;
+
+service Image {
+  rpc TestImage (google.protobuf.Empty) returns (image) {}
+
+}
+
+
+message image {
+  int64 width = 1;
+  int64 height = 2;
+  bytes image_data = 3;
+}
